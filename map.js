@@ -7,8 +7,8 @@ let marker;
 // 跟使用者要位置
 function successGPS(position) {
   const lat = position.coords.latitude;
-  const lng = position.coords.longitude;
-  center = [lat, lng];
+  const long = position.coords.longitude;
+  center = [lat, long];
   
   // 更新地圖中心
   map.setView(center, zoom);
