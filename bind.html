@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綁定載具</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            background-color: #c5e0ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1.bind {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .card {
+            background-color: rgb(163, 211, 250);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 400px; 
+            text-align: center;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        input {
+            font-size: 18px;
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 40px;
+            background-color: #3a85b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 class="bind">綁定載具</h1>
+        <form onsubmit="gotopage2(event)">
+            <label for="vehicle">載具編號:</label><br>
+            <input type="text" id="vehicle" name="vehicle" required><br><br>
+            <button type="submit">綁定</button>
+        </form>
+    </div>
+    <script>
+        function gotopage2(event) {
+            event.preventDefault();
+            const Input = document.getElementById("vehicle").value;
+            if(Input.trim() === "") {
+                alert("請輸入載具編號！");
+                return false;
+            }
+            alert("綁定成功！即將跳轉...");
+            window.location.href = "index.html";
+            return true;
+        }
+    </script>
+</body>
+</html>
